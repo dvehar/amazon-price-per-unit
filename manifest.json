@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Amazon Price Per Ounce",
+  "description": "This extension shows the price per unit (once, pound, etc.) for Amazon items where it is not already shown.",
+  "version": "1.0",
+  "permissions": [
+    "http://*.amazon.com/",
+    "https://*.amazon.com/"
+  ],
+  "background": {
+    "scripts": ["eventPage.js"],
+    "persistent": false
+  },
+  "icons": { "128": "Amazon PPO.png" },
+  "content_scripts": [
+    {
+      "matches": ["*://www.amazon.com/*"],
+      "js": ["jquery.min.js", "myscript.js"]
+    }
+  ],
+  "page_action": {
+
+  }
+}
